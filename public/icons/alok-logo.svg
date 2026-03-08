@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="a-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#0077b6"/>
+    </linearGradient>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#0d1b3e"/>
+      <stop offset="100%" stop-color="#050b1f"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background rounded square -->
+  <rect width="64" height="64" rx="16" fill="url(#bg-grad)"/>
+
+  <!-- Subtle border -->
+  <rect width="64" height="64" rx="16" stroke="rgba(0,212,255,0.25)" stroke-width="1" fill="none"/>
+
+  <!-- "A" lettermark — bold custom path, centred -->
+  <!-- Main strokes of A: left leg, right leg, crossbar -->
+  <g filter="url(#glow)">
+    <!-- Left diagonal stroke -->
+    <path d="M 14 50 L 32 14 L 50 50" stroke="url(#a-grad)" stroke-width="5.5"
+          stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <!-- Crossbar -->
+    <path d="M 22 37 L 42 37" stroke="url(#a-grad)" stroke-width="4"
+          stroke-linecap="round" fill="none"/>
+  </g>
+
+  <!-- Inner fill cutout — makes A feel premium, not heavy -->
+  <path d="M 14 50 L 32 14 L 50 50" stroke="rgba(0,212,255,0.12)" stroke-width="5.5"
+        stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+
+  <!-- Tiny dot above the A peak — Alok Message "signal" mark -->
+  <circle cx="32" cy="9" r="2.5" fill="#00d4ff" opacity="0.7"/>
+</svg>
